@@ -44,8 +44,8 @@ def export_HTML(soup):
     return success
 
 # Using the soup object returned by scrape() the extract_uniqueURIs method pulls out all of the absolute and relative weblinks from the HTML code into a list.
-# From there it checks for duplicates by converting the list of uris into a set of uris.
-# Lastly, the set of uris is sorted for readibility reason and then returned as uri_sorted
+# From there it checks for duplicates by converting the list of URIs into a set of URIs.
+# Lastly, the set of URIs is sorted for readibility reason and then returned as uri_sorted
 def extract_uniqueURIs(soup): 
     
     # Pulling URIs from given URL and putting them in a list
@@ -61,7 +61,7 @@ def extract_uniqueURIs(soup):
             uri_list.append(urllib.parse.urljoin(base, data))
 
     
-    # Removing duplicates by converting the url list into a set
+    # Removing duplicates by converting the URI list into a set
     uri_set = list(set(uri_list))
 
     # Sort duplicate free uri_set
@@ -70,7 +70,7 @@ def extract_uniqueURIs(soup):
     print("A list of the unique URIs was successfully created.")
     return uri_sorted
 
-# The export_CSV() method takes the set of url links and writes it out into a CSV file. 
+# The export_CSV() method takes the set of URL links and writes it out into a CSV file. 
 def export_CSV(uri_set):
     
     success = False
